@@ -147,6 +147,9 @@
   .loc .city { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.4rem; display: flex; align-items: center; gap: 0.5rem; }
   .loc .city::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 10px var(--violet); }
   .loc address { font-style: normal; color: var(--text-dim); margin: 0.7rem 0 1.2rem; font-size: 0.96rem; }
+  .loc .phone { display: block; color: var(--text); font-weight: 500; font-size: 1.04rem; margin-bottom: 1rem; transition: color 0.2s; }
+  .loc .phone:hover { color: var(--neon); }
+  .loc-links { display: flex; gap: 1.3rem; flex-wrap: wrap; }
   .loc a.dir { font-size: 0.78rem; letter-spacing: 0.04em; color: var(--neon); font-weight: 500; display: inline-flex; align-items: center; gap: 0.35rem; }
   .loc a.dir:hover { text-shadow: 0 0 12px var(--neon-soft); }
 
@@ -285,12 +288,12 @@
       <p>Stop in any location. Hours vary by store — give your local shop a call to confirm.</p>
     </div>
     <div class="loc-grid">
-      <div class="loc reveal d1"><div class="city">Raleigh</div><address>8201 Rowlock Way, Ste 114<br />Raleigh, NC</address><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=E-Smoke%208201%20Rowlock%20Way%20Ste%20114%20Raleigh%20NC">Get directions →</a></div>
-      <div class="loc reveal d2"><div class="city">Graham</div><address>212 S Main St<br />Graham, NC</address><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=E-Smoke%20212%20S%20Main%20St%20Graham%20NC">Get directions →</a></div>
-      <div class="loc reveal d3"><div class="city">Durham</div><address>3205 University Dr<br />Durham, NC</address><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=E-Smoke%203205%20University%20Dr%20Durham%20NC">Get directions →</a></div>
-      <div class="loc reveal d1"><div class="city">Hendersonville</div><address>168 Highlands Square Dr<br />Hendersonville, NC</address><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=E-Smoke%20168%20Highlands%20Square%20Dr%20Hendersonville%20NC">Get directions →</a></div>
-      <div class="loc reveal d2"><div class="city">Southport</div><address>1671 N Howe St<br />Southport, NC</address><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=E-Smoke%201671%20N%20Howe%20St%20Southport%20NC">Get directions →</a></div>
-      <div class="loc reveal d3"><div class="city">Winston-Salem</div><address>4842 Country Club Rd<br />Winston-Salem, NC</address><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=E-Smoke%204842%20Country%20Club%20Rd%20Winston-Salem%20NC">Get directions →</a></div>
+      <div class="loc reveal d1"><div class="city">Raleigh</div><address>8201 Rowlock Way, Ste 114<br />Raleigh, NC</address><a class="phone" href="tel:+19198035726">(919) 803-5726</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%208201%20Rowlock%20Way%20Ste%20114%20Raleigh%20NC">Directions →</a><a class="dir" target="_blank" rel="noopener" href="https://www.instagram.com/esmoke_raleigh/">Instagram ↗</a></div></div>
+      <div class="loc reveal d2"><div class="city">Graham</div><address>212 S Main St<br />Graham, NC</address><a class="phone" href="tel:+13362704888">(336) 270-4888</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%20212%20S%20Main%20St%20Graham%20NC">Directions →</a><a class="dir" target="_blank" rel="noopener" href="https://www.instagram.com/esmoke_graham/">Instagram ↗</a></div></div>
+      <div class="loc reveal d3"><div class="city">Durham</div><address>3205 University Dr<br />Durham, NC</address><a class="phone" href="tel:+19848880189">(984) 888-0189</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%203205%20University%20Dr%20Durham%20NC">Directions →</a><a class="dir" target="_blank" rel="noopener" href="https://www.instagram.com/esmokedurham/">Instagram ↗</a></div></div>
+      <div class="loc reveal d1"><div class="city">Hendersonville</div><address>168 Highlands Square Dr<br />Hendersonville, NC</address><a class="phone" href="tel:+18285131000">(828) 513-1000</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%20168%20Highlands%20Square%20Dr%20Hendersonville%20NC">Directions →</a></div></div>
+      <div class="loc reveal d2"><div class="city">Southport</div><address>1671 N Howe St<br />Southport, NC</address><a class="phone" href="tel:+19104779020">(910) 477-9020</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%201671%20N%20Howe%20St%20Southport%20NC">Directions →</a></div></div>
+      <div class="loc reveal d3"><div class="city">Winston-Salem</div><address>4842 Country Club Rd<br />Winston-Salem, NC</address><a class="phone" href="tel:+13362936167">(336) 293-6167</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%204842%20Country%20Club%20Rd%20Winston-Salem%20NC">Directions →</a><a class="dir" target="_blank" rel="noopener" href="https://www.instagram.com/esmoke_winston/">Instagram ↗</a></div></div>
     </div>
   </div>
 </section>
