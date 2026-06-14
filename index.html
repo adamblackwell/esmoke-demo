@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>E-Smoke — Vape, Glass &amp; More · 6 NC Locations</title>
+<title>ESMOKE Tobacco &amp; Vape — Your One Stop Shop · 6 NC Locations</title>
 <meta name="description" content="E-Smoke — North Carolina's neighborhood vape & smoke shop. Disposables, salt nic, mods, glass, hookah, kratom, Delta-8 and more. Six locations across NC." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,11 +16,11 @@
     --surface-2: #161a28;
     --text: #e9edf7;
     --text-dim: #8b93a9;
-    --neon: #25f4e0;
-    --neon-soft: rgba(37,244,224,0.5);
-    --violet: #9b5cff;
-    --pink: #ff3da6;
-    --line: rgba(37,244,224,0.16);
+    --neon: #3f8bd0;
+    --neon-soft: rgba(63,139,208,0.5);
+    --violet: #2f6299;
+    --pink: #5a9ad6;
+    --line: rgba(63,139,208,0.18);
     --line-2: rgba(255,255,255,0.07);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,12 +36,12 @@
   a { color: inherit; text-decoration: none; }
   .syne { font-family: "Syne", sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 1.0; }
   .eyebrow { font-size: 0.7rem; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 600; color: var(--neon); display: inline-block; }
-  .glow-text { text-shadow: 0 0 18px var(--neon-soft), 0 0 40px rgba(37,244,224,0.25); }
+  .glow-text { text-shadow: 0 0 18px var(--neon-soft), 0 0 40px rgba(63,139,208,0.25); }
 
   /* ---------- age gate ---------- */
   .agegate {
     position: fixed; inset: 0; z-index: 99999;
-    background: radial-gradient(circle at 50% 40%, rgba(37,244,224,0.08), transparent 60%), rgba(4,5,8,0.97);
+    background: radial-gradient(circle at 50% 40%, rgba(63,139,208,0.08), transparent 60%), rgba(4,5,8,0.97);
     backdrop-filter: blur(10px);
     display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;
   }
@@ -59,18 +59,18 @@
     display: inline-flex; align-items: center; gap: 0.55em;
     font-family: "Sora", sans-serif; font-weight: 600; letter-spacing: 0.04em;
     font-size: 0.86rem; padding: 0.95em 1.8em; border-radius: 999px; cursor: pointer;
-    background: var(--neon); color: #05201d; border: 1px solid var(--neon);
-    box-shadow: 0 0 22px rgba(37,244,224,0.35); transition: all 0.25s ease;
+    background: var(--neon); color: #fff; border: 1px solid var(--neon);
+    box-shadow: 0 0 22px rgba(63,139,208,0.35); transition: all 0.25s ease;
   }
-  .btn:hover { box-shadow: 0 0 34px rgba(37,244,224,0.6); transform: translateY(-2px); }
+  .btn:hover { box-shadow: 0 0 34px rgba(63,139,208,0.6); transform: translateY(-2px); }
   .btn--ghost { background: transparent; color: var(--text); border-color: var(--line-2); box-shadow: none; }
-  .btn--ghost:hover { border-color: var(--neon); color: var(--neon); box-shadow: 0 0 20px rgba(37,244,224,0.25); }
+  .btn--ghost:hover { border-color: var(--neon); color: var(--neon); box-shadow: 0 0 20px rgba(63,139,208,0.25); }
 
   /* ---------- nav ---------- */
   header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all 0.35s ease; padding: 1.2rem 0; }
   header.scrolled { background: rgba(7,8,12,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-2); padding: 0.75rem 0; }
   nav { display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.45rem; letter-spacing: -0.02em; }
+  .brand { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.45rem; letter-spacing: 0.01em; color: var(--text); text-shadow: 0 0 18px rgba(63,139,208,0.55); }
   .brand .e { color: var(--neon); text-shadow: 0 0 16px var(--neon-soft); }
   .nav-links { display: flex; gap: 2.2rem; align-items: center; }
   .nav-links a { font-size: 0.82rem; letter-spacing: 0.06em; font-weight: 400; color: var(--text-dim); transition: color 0.2s; }
@@ -84,13 +84,13 @@
   .hero::before {
     content: ""; position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
     width: 90vw; height: 90vw; max-width: 1000px; max-height: 1000px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(37,244,224,0.16), transparent 55%), radial-gradient(circle at 60% 60%, rgba(155,92,255,0.14), transparent 60%);
+    background: radial-gradient(circle, rgba(63,139,208,0.16), transparent 55%), radial-gradient(circle at 60% 60%, rgba(47,98,153,0.14), transparent 60%);
     filter: blur(20px); pointer-events: none;
   }
   /* grid floor */
   .hero::after {
     content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
-    background-image: linear-gradient(rgba(37,244,224,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(37,244,224,0.07) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(63,139,208,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(63,139,208,0.07) 1px, transparent 1px);
     background-size: 44px 44px; mask-image: linear-gradient(to top, #000, transparent); pointer-events: none;
   }
   .hero-inner { position: relative; z-index: 2; max-width: 920px; }
@@ -124,7 +124,7 @@
     border: 1px solid var(--line-2); border-radius: 16px; padding: 1.6rem 1.3rem;
     transition: all 0.3s ease; position: relative; overflow: hidden;
   }
-  .card:hover { border-color: var(--neon); transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,0.5), 0 0 24px rgba(37,244,224,0.12); }
+  .card:hover { border-color: var(--neon); transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,0.5), 0 0 24px rgba(63,139,208,0.12); }
   .card .ic { width: 40px; height: 40px; color: var(--neon); margin-bottom: 1rem; filter: drop-shadow(0 0 8px var(--neon-soft)); }
   .card h3 { font-family: "Syne", sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 0.3rem; }
   .card p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.45; }
@@ -143,7 +143,7 @@
     background: linear-gradient(160deg, var(--surface), var(--bg-2));
     border: 1px solid var(--line-2); border-radius: 16px; padding: 1.7rem; transition: all 0.3s ease;
   }
-  .loc:hover { border-color: var(--violet); box-shadow: 0 0 26px rgba(155,92,255,0.18); }
+  .loc:hover { border-color: var(--violet); box-shadow: 0 0 26px rgba(47,98,153,0.18); }
   .loc .city { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.4rem; display: flex; align-items: center; gap: 0.5rem; }
   .loc .city::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 10px var(--violet); }
   .loc address { font-style: normal; color: var(--text-dim); margin: 0.7rem 0 1.2rem; font-size: 0.96rem; }
@@ -189,7 +189,8 @@
 <!-- AGE GATE -->
 <div class="agegate" id="agegate">
   <div class="box">
-    <div class="mark"><span class="e">E-</span>Smoke</div>
+    <div class="mark">ESMOKE</div>
+    <p style="color:var(--text-dim);font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;margin-top:0.3rem;">Tobacco &amp; Vape · Est. 2014</p>
     <h2>Are you 21 or older?</h2>
     <p>You must be of legal age to enter this site. Products sold here are intended for adults 21+ only.</p>
     <div class="gate-btns">
@@ -203,7 +204,7 @@
 <header id="header">
   <div class="wrap">
     <nav>
-      <a class="brand" href="#top"><span class="e">E-</span>Smoke</a>
+      <a class="brand" href="#top">ESMOKE</a>
       <div class="nav-links">
         <a href="#products">Products</a>
         <a href="#why">Why E-Smoke</a>
@@ -221,7 +222,8 @@
 <section class="hero">
   <div class="wrap">
     <div class="hero-inner">
-      <span class="badge reveal in"><span class="dot"></span> 6 Locations across North Carolina</span>
+      <span class="eyebrow reveal in" style="display:block;margin-bottom:1.1rem;">Your One Stop Shop · For All Your Smoking Needs</span>
+      <span class="badge reveal in"><span class="dot"></span> Est. 2014 · 6 Locations across North Carolina</span>
       <h1 class="syne reveal in d1">Your shop for <span class="em glow-text">everything</span> vape &amp; more.</h1>
       <p class="lede reveal in d2">Disposables, juice, glass, hookah, kratom, Delta-8 and the deep cuts — stocked, fair-priced, and run by people who actually know the gear.</p>
       <div class="hero-cta reveal in d3">
@@ -305,8 +307,9 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <div class="foot-brand"><span class="e">E-</span>Smoke</div>
-        <p style="color:var(--text-dim);margin-top:0.6rem;max-width:32ch;font-size:0.92rem;">North Carolina's neighborhood vape &amp; smoke shop. Six locations and counting.</p>
+        <div class="foot-brand">ESMOKE</div>
+        <p style="color:var(--neon);margin-top:0.2rem;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;">Tobacco &amp; Vape · Est. 2014</p>
+        <p style="color:var(--text-dim);margin-top:0.8rem;max-width:32ch;font-size:0.92rem;">Your one stop shop for all your smoking needs. Six locations across North Carolina, since 2014.</p>
       </div>
       <div class="foot-cols">
         <div class="col"><h4>Shop</h4><a href="#products">Products</a><a href="#why">Why E-Smoke</a><a href="#locations">Locations</a></div>
@@ -317,7 +320,7 @@
       <b>WARNING:</b> This product contains nicotine. Nicotine is an addictive chemical. &nbsp;·&nbsp; You must be 21+ to purchase. Products not for use by minors, or by women who are pregnant or nursing.
     </div>
     <div class="foot-bottom">
-      <span>© E-Smoke · North Carolina</span>
+      <span>© ESMOKE Tobacco &amp; Vape · North Carolina</span>
       <span class="demo-tag">Demo site — designed &amp; built by Adam Blackwell. Sample for review.</span>
     </div>
   </div>
