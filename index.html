@@ -3,262 +3,97 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ESMOKE Tobacco &amp; Vape — Your One Stop Shop · 6 NC Locations</title>
-<meta name="description" content="E-Smoke — North Carolina's neighborhood vape & smoke shop. Disposables, salt nic, mods, glass, hookah, kratom, Delta-8 and more. Six locations across NC." />
+<title>ESMOKE — Tobacco &amp; Vape · Your One Stop Shop · 6 NC Locations</title>
+<meta name="description" content="E-Smoke — North Carolina's neighborhood vape & smoke shop. Disposables, salt nic, mods, glass, hookah, kratom, Delta-8 and more. Six locations across NC, with rewards." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --bg: #07080c;
-    --bg-2: #0c0e16;
-    --surface: #11141f;
-    --surface-2: #161a28;
-    --text: #e9edf7;
-    --text-dim: #8b93a9;
-    --neon: #3f8bd0;
-    --neon-soft: rgba(63,139,208,0.5);
-    --violet: #2f6299;
-    --pink: #5a9ad6;
-    --line: rgba(63,139,208,0.18);
-    --line-2: rgba(255,255,255,0.07);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Sora", system-ui, sans-serif;
-    font-size: 17px; line-height: 1.6; font-weight: 300;
-    overflow-x: hidden; -webkit-font-smoothing: antialiased;
-  }
-  .wrap { width: min(1200px, 90vw); margin: 0 auto; }
-  a { color: inherit; text-decoration: none; }
-  .syne { font-family: "Syne", sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 1.0; }
-  .eyebrow { font-size: 0.7rem; letter-spacing: 0.34em; text-transform: uppercase; font-weight: 600; color: var(--neon); display: inline-block; }
-  .glow-text { text-shadow: 0 0 18px var(--neon-soft), 0 0 40px rgba(63,139,208,0.25); }
-
-  /* ---------- age gate ---------- */
-  .agegate {
-    position: fixed; inset: 0; z-index: 99999;
-    background: radial-gradient(circle at 50% 40%, rgba(63,139,208,0.08), transparent 60%), rgba(4,5,8,0.97);
-    backdrop-filter: blur(10px);
-    display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem;
-  }
-  .agegate.hidden { display: none; }
-  .agegate .box { max-width: 440px; }
-  .agegate .mark { font-family: "Syne", sans-serif; font-weight: 800; font-size: 2.6rem; color: var(--neon); }
-  .agegate .mark .e { color: var(--text); }
-  .agegate h2 { font-family: "Syne", sans-serif; font-weight: 700; font-size: 1.5rem; margin: 1.6rem 0 0.6rem; }
-  .agegate p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 1.8rem; }
-  .agegate .gate-btns { display: flex; gap: 1rem; justify-content: center; }
-  .agegate .deny { color: var(--text-dim); font-size: 0.85rem; margin-top: 1.4rem; display:none; }
-
-  /* ---------- buttons ---------- */
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.55em;
-    font-family: "Sora", sans-serif; font-weight: 600; letter-spacing: 0.04em;
-    font-size: 0.86rem; padding: 0.95em 1.8em; border-radius: 999px; cursor: pointer;
-    background: var(--neon); color: #fff; border: 1px solid var(--neon);
-    box-shadow: 0 0 22px rgba(63,139,208,0.35); transition: all 0.25s ease;
-  }
-  .btn:hover { box-shadow: 0 0 34px rgba(63,139,208,0.6); transform: translateY(-2px); }
-  .btn--ghost { background: transparent; color: var(--text); border-color: var(--line-2); box-shadow: none; }
-  .btn--ghost:hover { border-color: var(--neon); color: var(--neon); box-shadow: 0 0 20px rgba(63,139,208,0.25); }
-
-  /* ---------- nav ---------- */
-  header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all 0.35s ease; padding: 1.2rem 0; }
-  header.scrolled { background: rgba(7,8,12,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line-2); padding: 0.75rem 0; }
-  nav { display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.45rem; letter-spacing: 0.01em; color: var(--text); text-shadow: 0 0 18px rgba(63,139,208,0.55); }
-  .brand .e { color: var(--neon); text-shadow: 0 0 16px var(--neon-soft); }
-  .nav-links { display: flex; gap: 2.2rem; align-items: center; }
-  .nav-links a { font-size: 0.82rem; letter-spacing: 0.06em; font-weight: 400; color: var(--text-dim); transition: color 0.2s; }
-  .nav-links a:hover { color: var(--neon); }
-  .nav-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; }
-
-  /* ---------- hero ---------- */
-  .hero {
-    min-height: 100vh; display: flex; align-items: center; position: relative; padding: 6.5rem 0 3rem; overflow: hidden;
-  }
-  .hero::before {
-    content: ""; position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
-    width: 90vw; height: 90vw; max-width: 1000px; max-height: 1000px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(63,139,208,0.16), transparent 55%), radial-gradient(circle at 60% 60%, rgba(47,98,153,0.14), transparent 60%);
-    filter: blur(20px); pointer-events: none;
-  }
-  /* grid floor */
-  .hero::after {
-    content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
-    background-image: linear-gradient(rgba(63,139,208,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(63,139,208,0.07) 1px, transparent 1px);
-    background-size: 44px 44px; mask-image: linear-gradient(to top, #000, transparent); pointer-events: none;
-  }
-  .hero-inner { position: relative; z-index: 2; max-width: 920px; }
-  .hero .badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.74rem; letter-spacing: 0.1em; color: var(--text); background: var(--surface); border: 1px solid var(--line); padding: 0.5em 1em; border-radius: 999px; margin-bottom: 1.6rem; }
-  .hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 10px var(--neon); }
-  .hero h1 { font-size: clamp(2.1rem, 5.4vw, 4.3rem); margin-bottom: 1.3rem; }
-  .hero h1 .em { color: var(--neon); }
-  .hero p.lede { font-size: 1.25rem; max-width: 40ch; color: var(--text-dim); margin-bottom: 2.2rem; font-weight: 300; }
-  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  /* ---------- marquee ---------- */
-  .strip { border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); background: var(--bg-2); overflow: hidden; }
-  .marquee { display: flex; gap: 2.6rem; padding: 1rem 0; white-space: nowrap; animation: scroll-x 28s linear infinite; }
-  .marquee span { font-family: "Syne", sans-serif; font-weight: 700; font-size: 1rem; color: var(--text-dim); display: inline-flex; align-items: center; gap: 2.6rem; text-transform: uppercase; letter-spacing: 0.04em; }
-  .marquee span::after { content: "◆"; color: var(--neon); font-size: 0.7rem; }
-  @keyframes scroll-x { to { transform: translateX(-50%); } }
-
-  /* ---------- sections ---------- */
-  section.pad { padding: 7rem 0; }
-  .sec-head { margin-bottom: 3.4rem; }
-  .sec-head.center { text-align: center; }
-  .sec-head h2 { font-size: clamp(2.3rem, 6vw, 4.2rem); margin-top: 0.7rem; }
-  .sec-head h2 .em { color: var(--neon); }
-  .sec-head p { color: var(--text-dim); margin-top: 1rem; max-width: 56ch; }
-  .sec-head.center p { margin-left: auto; margin-right: auto; }
-
-  /* ---------- product grid ---------- */
-  .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.1rem; }
-  .card {
-    background: linear-gradient(160deg, var(--surface), var(--bg-2));
-    border: 1px solid var(--line-2); border-radius: 16px; padding: 1.6rem 1.3rem;
-    transition: all 0.3s ease; position: relative; overflow: hidden;
-  }
-  .card:hover { border-color: var(--neon); transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,0.5), 0 0 24px rgba(63,139,208,0.12); }
-  .card .ic { width: 40px; height: 40px; color: var(--neon); margin-bottom: 1rem; filter: drop-shadow(0 0 8px var(--neon-soft)); }
-  .card h3 { font-family: "Syne", sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 0.3rem; }
-  .card p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.45; }
-
-  /* ---------- why / features ---------- */
-  .why { background: var(--bg-2); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
-  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
-  .feat { padding: 2rem; border: 1px solid var(--line-2); border-radius: 16px; background: var(--surface); }
-  .feat .n { font-family: "Syne", sans-serif; font-weight: 800; font-size: 2.4rem; color: var(--neon); }
-  .feat h3 { font-family: "Syne", sans-serif; font-weight: 700; font-size: 1.2rem; margin: 0.5rem 0; }
-  .feat p { color: var(--text-dim); font-size: 0.95rem; }
-
-  /* ---------- locations ---------- */
-  .loc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-  .loc {
-    background: linear-gradient(160deg, var(--surface), var(--bg-2));
-    border: 1px solid var(--line-2); border-radius: 16px; padding: 1.7rem; transition: all 0.3s ease;
-  }
-  .loc:hover { border-color: var(--violet); box-shadow: 0 0 26px rgba(47,98,153,0.18); }
-  .loc .city { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.4rem; display: flex; align-items: center; gap: 0.5rem; }
-  .loc .city::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 10px var(--violet); }
-  .loc address { font-style: normal; color: var(--text-dim); margin: 0.7rem 0 1.2rem; font-size: 0.96rem; }
-  .loc .hours { margin: 0.9rem 0 1rem; font-size: 0.82rem; border-top: 1px solid var(--line-2); padding-top: 0.8rem; }
-  .loc .hours .row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.16rem 0; }
-  .loc .hours .row .d { color: var(--text-dim); }
-  .loc .hours .row .t { color: var(--text); }
-  .loc .open247 { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0.9rem 0 1rem; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--neon); border: 1px solid var(--line); border-radius: 999px; padding: 0.35em 0.9em; }
-  .loc .open247::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 8px var(--neon); }
-  .loc-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.9rem 0 1rem; }
-  .loc-badges .open247 { margin: 0; }
-  .badge-alt { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--text); border: 1px solid var(--line-2); border-radius: 999px; padding: 0.35em 0.9em; }
-  .badge-alt svg { width: 15px; height: 15px; color: var(--neon); }
-  .loc .phone { display: block; color: var(--text); font-weight: 500; font-size: 1.04rem; margin-bottom: 1rem; transition: color 0.2s; }
-  .loc .phone:hover { color: var(--neon); }
-  .loc-links { display: flex; gap: 1.3rem; flex-wrap: wrap; }
-  .loc a.dir { font-size: 0.78rem; letter-spacing: 0.04em; color: var(--neon); font-weight: 500; display: inline-flex; align-items: center; gap: 0.35rem; }
-  .loc a.dir:hover { text-shadow: 0 0 12px var(--neon-soft); }
-
-  /* ---------- cta band ---------- */
-  /* ---------- rewards ---------- */
-  .rewards { background: var(--bg-2); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
-  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-  .tier { background: linear-gradient(160deg, var(--surface), var(--bg-2)); border: 1px solid var(--line-2); border-radius: 16px; padding: 2.6rem 1.6rem; text-align: center; transition: all 0.3s ease; }
-  .tier:hover { border-color: var(--neon); transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,0.5), 0 0 24px rgba(63,139,208,0.14); }
-  .tier .pts { font-family: "Syne", sans-serif; font-weight: 800; font-size: 3.2rem; color: var(--neon); line-height: 1; text-shadow: 0 0 22px rgba(63,139,208,0.4); }
-  .tier .pts small { display: block; font-family: "Sora", sans-serif; font-weight: 500; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.5rem; }
-  .tier .arrow { color: var(--neon); font-size: 1.4rem; margin: 1.1rem 0 0.9rem; opacity: 0.55; }
-  .tier .reward { font-family: "Syne", sans-serif; font-weight: 800; font-size: 2rem; color: var(--text); }
-  .tier .cond { font-size: 0.92rem; color: var(--text-dim); margin-top: 0.4rem; }
-  @media (max-width: 680px) { .tiers { grid-template-columns: 1fr; } }
-  .band { text-align: center; position: relative; }
-  .band h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 1.2rem; }
-  .band p { color: var(--text-dim); margin-bottom: 2rem; }
-
-  /* ---------- footer ---------- */
-  footer { background: var(--bg-2); border-top: 1px solid var(--line-2); padding: 4rem 0 2rem; }
-  .foot-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; align-items: flex-start; }
-  .foot-brand { font-family: "Syne", sans-serif; font-weight: 800; font-size: 2rem; }
-  .foot-brand .e { color: var(--neon); }
-  .foot-cols { display: flex; gap: 4rem; flex-wrap: wrap; }
-  .foot-cols .col h4 { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.9rem; }
-  .foot-cols .col a { display: block; font-size: 0.92rem; color: var(--text); margin-bottom: 0.5rem; }
-  .foot-cols .col a:hover { color: var(--neon); }
-  .warning { margin-top: 3rem; padding: 1rem 1.3rem; border: 1px solid var(--line-2); border-radius: 10px; font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.02em; }
-  .warning b { color: var(--text); }
-  .foot-bottom { margin-top: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: var(--text-dim); }
-  .demo-tag { color: rgba(139,147,169,0.6); }
-
-  /* reveal */
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.8s cubic-bezier(.2,.7,.2,1), transform 0.8s cubic-bezier(.2,.7,.2,1); }
-  .reveal.in { opacity: 1; transform: none; }
-  .d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}
-
-  @media (max-width: 980px) { .grid { grid-template-columns: repeat(3, 1fr); } .why-grid, .loc-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 680px) {
-    .nav-links { display: none; }
-    .nav-toggle { display: block; }
-    .grid { grid-template-columns: 1fr 1fr; }
-    .why-grid, .loc-grid { grid-template-columns: 1fr; }
-    .foot-top { flex-direction: column; }
-  }
-</style>
+<link rel="stylesheet" href="assets/styles.css?v=5" />
 </head>
 <body>
 
-<!-- AGE GATE -->
+<!-- ================= AGE GATE ================= -->
 <div class="agegate" id="agegate">
   <div class="box">
-    <div class="mark">ESMOKE</div>
-    <p style="color:var(--text-dim);font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;margin-top:0.3rem;">Tobacco &amp; Vape · Est. 2014</p>
+    <div class="mark"><span class="e">E</span>SMOKE</div>
+    <div class="sub">Tobacco &amp; Vape · Est. 2014</div>
     <h2>Are you 21 or older?</h2>
-    <p>You must be of legal age to enter this site. Products sold here are intended for adults 21+ only.</p>
+    <p class="q">You must be of legal age to enter. Products sold here are intended for adults 21+ only.</p>
     <div class="gate-btns">
-      <button class="btn" onclick="document.getElementById('agegate').classList.add('hidden')">Yes, I'm 21+</button>
-      <button class="btn btn--ghost" onclick="document.getElementById('deny').style.display='block'">No</button>
+      <button class="btn" onclick="ageConfirm()">Yes, I'm 21+</button>
+      <button class="btn btn--ghost" onclick="ageDeny()">No</button>
     </div>
     <p class="deny" id="deny">Sorry — you must be 21 or older to enter.</p>
+    <p class="legal">By entering you agree you are of legal smoking age in your state.</p>
   </div>
 </div>
 
+<!-- ================= HEADER ================= -->
 <header id="header">
   <div class="wrap">
     <nav>
-      <a class="brand" href="#top">ESMOKE</a>
+      <a class="brand" href="#top"><span class="e">E</span>SMOKE<span class="dot"></span></a>
       <div class="nav-links">
         <a href="#products">Products</a>
-        <a href="#why">Why E-Smoke</a>
         <a href="#rewards">Rewards</a>
+        <a href="#shop">Shop</a>
         <a href="#locations">Locations</a>
         <a href="#locations" class="btn">Find a Store</a>
       </div>
-      <button class="nav-toggle" aria-label="Menu" onclick="var n=document.querySelector('.nav-links');n.style.display=(getComputedStyle(n).display==='none'?'flex':'none')">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <button class="nav-toggle" aria-label="Open menu" onclick="openDrawer()">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </nav>
   </div>
 </header>
 
+<!-- ================= MOBILE DRAWER ================= -->
+<div class="drawer" id="drawer">
+  <div class="drawer__scrim"></div>
+  <div class="drawer__panel">
+    <div class="drawer__head">
+      <a class="brand" href="#top"><span class="e">E</span>SMOKE</a>
+      <button class="drawer__close" aria-label="Close menu" onclick="closeDrawer()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="drawer__links">
+      <a href="#products">Products</a>
+      <a href="#rewards">Rewards</a>
+      <a href="#shop">Shop</a>
+      <a href="#locations">Locations</a>
+    </div>
+    <div class="drawer__cta">
+      <a href="#locations" class="btn btn--block btn--lg">Find a Store →</a>
+    </div>
+  </div>
+</div>
+
 <a id="top"></a>
+
+<!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-inner">
-      <span class="eyebrow reveal in" style="display:block;margin-bottom:1.1rem;">Your One Stop Shop · For All Your Smoking Needs</span>
-      <span class="badge reveal in"><span class="dot"></span> Est. 2014 · 6 Locations across North Carolina</span>
-      <h1 class="syne reveal in d1">Your shop for <span class="em glow-text">everything</span> vape &amp; more.</h1>
-      <p class="lede reveal in d2">Disposables, juice, glass, hookah, kratom, Delta-8 and the deep cuts — stocked, fair-priced, and run by people who actually know the gear.</p>
-      <div class="hero-cta reveal in d3">
-        <a href="#locations" class="btn">Find Your Store</a>
-        <a href="#products" class="btn btn--ghost">Browse Products</a>
+    <div class="hero-grid">
+      <div class="hero-inner">
+        <span class="badge reveal in"><span class="dot"></span> Est. 2014 · 6 locations across North Carolina</span>
+        <h1 class="syne reveal in d1">Your shop for <span class="em glow-text">everything</span> vape &amp; more.</h1>
+        <p class="lede reveal in d2">Disposables, juice, glass, hookah, kratom, Delta-8 and the deep cuts — stocked fresh, fair-priced, and run by people who actually know the gear.</p>
+        <div class="hero-cta reveal in d3">
+          <a href="#locations" class="btn btn--lg">Find Your Store</a>
+          <a href="#products" class="btn btn--ghost btn--lg">Browse Products</a>
+        </div>
+        <div class="hero-stats reveal in d4">
+          <div class="s"><div class="n">6</div><div class="l">NC Stores</div></div>
+          <div class="s"><div class="n">10+</div><div class="l">Years Open</div></div>
+          <div class="s"><div class="n">100s</div><div class="l">Of Products</div></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ================= MARQUEE ================= -->
 <div class="strip">
   <div class="marquee">
     <span>Disposables</span><span>Salt Nic</span><span>Mods &amp; Tanks</span><span>Glass &amp; Pipes</span><span>Hookah</span><span>Kratom</span><span>Delta-8 · THCA</span><span>7-OH</span><span>Cigars</span>
@@ -266,29 +101,38 @@
   </div>
 </div>
 
+<!-- ================= PRODUCTS ================= -->
 <section class="pad" id="products">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">The Shelves</span>
       <h2 class="syne">What we <span class="em">stock</span></h2>
-      <p>One stop for all of it. If we don't have it on the shelf, odds are we can get it.</p>
+      <p>One stop for all of it. If it's not on the shelf, odds are we can get it.</p>
+    </div>
+    <div class="filters reveal d1">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="vape">Vape</button>
+      <button class="chip" data-filter="smoke">Smoke</button>
+      <button class="chip" data-filter="botanical">Botanicals</button>
+      <button class="chip" data-filter="gear">Gear</button>
     </div>
     <div class="grid">
-      <div class="card reveal d1"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="2" width="6" height="20" rx="3"/><path d="M9 7h6"/></svg><h3>Disposables</h3><p>Every brand &amp; flavor, always fresh stock.</p></div>
-      <div class="card reveal d2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3h10l-1 6H8Z"/><path d="M8 9v9a3 3 0 0 0 8 0V9"/></svg><h3>Vape Juice / Salt Nic</h3><p>Freebase &amp; salts, every nic level.</p></div>
-      <div class="card reveal d3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="8" width="14" height="11" rx="2"/><path d="M9 8V5h6v3M12 12v3"/></svg><h3>Mods &amp; Tanks</h3><p>Starter kits to advanced setups.</p></div>
-      <div class="card reveal d4"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 2h4v6l4 11a2 2 0 0 1-2 3H8a2 2 0 0 1-2-3l4-11Z"/></svg><h3>Glass &amp; Pipes</h3><p>Hand pipes, water pieces, rigs.</p></div>
-      <div class="card reveal d1"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v8M8 11h8l-1 7H9Z"/><circle cx="12" cy="20" r="1.5"/></svg><h3>Hookah / Shisha</h3><p>Hookahs, bowls, coals &amp; flavors.</p></div>
-      <div class="card reveal d2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4c4 2 6 5 6 9a6 6 0 0 1-12 0c0-4 2-7 6-9Z"/></svg><h3>Kratom</h3><p>Trusted brands, multiple strains.</p></div>
-      <div class="card reveal d3"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c1 4 4 5 4 9a4 4 0 0 1-8 0c0-4 3-5 4-9Z"/><path d="M12 13v9"/></svg><h3>CBD · Delta-8 · THCA</h3><p>Gummies, carts, flower &amp; more.</p></div>
-      <div class="card reveal d4"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>7-OH</h3><p>The latest 7-hydroxy products.</p></div>
-      <div class="card reveal d1"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13h18v3H3z"/><path d="M18 13V11M21 16v-5"/></svg><h3>Cigars &amp; Tobacco</h3><p>Singles, packs &amp; premium sticks.</p></div>
-      <div class="card reveal d2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg><h3>Accessories</h3><p>Coils, batteries, chargers, grinders.</p></div>
+      <div class="card reveal d1" data-cat="vape"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="2" width="6" height="20" rx="3"/><path d="M9 7h6"/></svg><span class="tag">Fresh</span><h3>Disposables</h3><p>Every brand &amp; flavor, always fresh stock.</p></div>
+      <div class="card reveal d2" data-cat="vape"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3h10l-1 6H8Z"/><path d="M8 9v9a3 3 0 0 0 8 0V9"/></svg><h3>Juice / Salt Nic</h3><p>Freebase &amp; salts, every nic level.</p></div>
+      <div class="card reveal d3" data-cat="vape"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="8" width="14" height="11" rx="2"/><path d="M9 8V5h6v3M12 12v3"/></svg><h3>Mods &amp; Tanks</h3><p>Starter kits to advanced setups.</p></div>
+      <div class="card reveal d4" data-cat="smoke"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 2h4v6l4 11a2 2 0 0 1-2 3H8a2 2 0 0 1-2-3l4-11Z"/></svg><h3>Glass &amp; Pipes</h3><p>Hand pipes, water pieces, rigs.</p></div>
+      <div class="card reveal d1" data-cat="smoke"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v8M8 11h8l-1 7H9Z"/><circle cx="12" cy="20" r="1.5"/></svg><h3>Hookah / Shisha</h3><p>Hookahs, bowls, coals &amp; flavors.</p></div>
+      <div class="card reveal d2" data-cat="botanical"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4c4 2 6 5 6 9a6 6 0 0 1-12 0c0-4 2-7 6-9Z"/></svg><h3>Kratom</h3><p>Trusted brands, multiple strains.</p></div>
+      <div class="card reveal d3" data-cat="botanical"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c1 4 4 5 4 9a4 4 0 0 1-8 0c0-4 3-5 4-9Z"/><path d="M12 13v9"/></svg><span class="tag">New</span><h3>CBD · Δ8 · THCA</h3><p>Gummies, carts, flower &amp; more.</p></div>
+      <div class="card reveal d4" data-cat="botanical"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>7-OH</h3><p>The latest 7-hydroxy products.</p></div>
+      <div class="card reveal d1" data-cat="smoke"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13h18v3H3z"/><path d="M18 13V11M21 16v-5"/></svg><h3>Cigars &amp; Tobacco</h3><p>Singles, packs &amp; premium sticks.</p></div>
+      <div class="card reveal d2" data-cat="gear"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg><h3>Accessories</h3><p>Coils, batteries, chargers, grinders.</p></div>
     </div>
   </div>
 </section>
 
-<section class="pad why" id="why">
+<!-- ================= WHY ================= -->
+<section class="pad alt" id="why">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Why E-Smoke</span>
@@ -297,79 +141,154 @@
     <div class="why-grid">
       <div class="feat reveal d1"><div class="n">6</div><h3>Stores across NC</h3><p>From Raleigh to Winston-Salem to the coast — there's an E-Smoke near you.</p></div>
       <div class="feat reveal d2"><div class="n">100s</div><h3>Of products in stock</h3><p>Huge selection across every category, restocked constantly.</p></div>
-      <div class="feat reveal d3"><div class="n">★</div><h3>Staff who know the gear</h3><p>Real answers, real recommendations — not a guess from behind the counter.</p></div>
+      <div class="feat reveal d3"><div class="n">★</div><h3>Staff who know the gear</h3><p>Real answers and real recommendations — not a guess from behind the counter.</p></div>
     </div>
   </div>
 </section>
 
-<section class="pad rewards" id="rewards">
+<!-- ================= REWARDS + DASHBOARD ================= -->
+<section class="pad" id="rewards">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Rewards</span>
-      <h2 class="syne">ESMOKE Rewards</h2>
-      <p>Earn points every time you shop — at any of our six stores. Stack them up and cash them in for real money off.</p>
+    <div class="rewards-layout">
+      <div class="rewards-copy reveal">
+        <span class="eyebrow">ESMOKE Rewards</span>
+        <h2 class="syne" style="font-size:clamp(2.2rem,5vw,3.5rem);margin-top:0.9rem;">Points that <span class="em">pay you back</span>.</h2>
+        <p style="color:var(--text-dim);margin-top:1rem;font-size:1.05rem;">Earn points every time you shop — at any of our six stores. Stack them up and cash them in for real money off. Free to join, ask any cashier.</p>
+        <div class="tiers">
+          <div class="tier-row reveal d1"><div class="pts">100<small>pts</small></div><div class="arrow">→</div><div><div class="reward">$10 off</div><div class="cond">on $25 or more</div></div></div>
+          <div class="tier-row reveal d2"><div class="pts">200<small>pts</small></div><div class="arrow">→</div><div><div class="reward">$20 off</div><div class="cond">on $50 or more</div></div></div>
+          <div class="tier-row reveal d3"><div class="pts">300<small>pts</small></div><div class="arrow">→</div><div><div class="reward">$30 off</div><div class="cond">on $75 or more</div></div></div>
+        </div>
+        <a href="#shop" class="btn btn--lg">Join Rewards — it's free</a>
+      </div>
+
+      <!-- interactive dashboard preview -->
+      <div class="dash reveal d2">
+        <div class="dash__top">
+          <div class="dash__hi">Welcome back, <b>Adam</b></div>
+          <div class="dash__chip">Member</div>
+        </div>
+        <div class="dash__balance"><span class="num" id="dashBalance">240</span><span class="unit">Points</span></div>
+        <div class="dash__progress">
+          <div class="dash__bar"><i id="dashBar" style="width:80%"></i></div>
+          <div class="dash__progmeta"><span id="dashNext">60 pts to next reward</span><span>300 pts</span></div>
+        </div>
+        <div class="dash__tabs">
+          <button class="active" data-tab="rewards">Rewards</button>
+          <button data-tab="activity">Activity</button>
+          <button data-tab="card">My Card</button>
+        </div>
+
+        <div class="dash__panel active" data-tab="rewards">
+          <div class="redeem"><div><div class="rt">$10 off</div><div class="rc">on $25+ · 100 pts</div></div><button data-cost="100">Redeem</button></div>
+          <div class="redeem"><div><div class="rt">$20 off</div><div class="rc">on $50+ · 200 pts</div></div><button data-cost="200">Redeem</button></div>
+          <div class="redeem"><div><div class="rt">$30 off</div><div class="rc">on $75+ · 300 pts</div></div><button data-cost="300">Redeem</button></div>
+        </div>
+
+        <div class="dash__panel" data-tab="activity">
+          <div class="activity"><div class="av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></div><div class="at"><div>Earned at Raleigh</div><div class="d">Jun 12 · $42 purchase</div></div><div class="pv">+42</div></div>
+          <div class="activity"><div class="av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></div><div class="at"><div>Earned at Durham</div><div class="d">Jun 4 · $58 purchase</div></div><div class="pv">+58</div></div>
+          <div class="activity"><div class="av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14"/></svg></div><div class="at"><div>Redeemed $10 off</div><div class="d">May 28 · Graham</div></div><div class="pv neg">−100</div></div>
+          <div class="activity"><div class="av"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg></div><div class="at"><div>Welcome bonus</div><div class="d">May 20 · Joined</div></div><div class="pv">+25</div></div>
+        </div>
+
+        <div class="dash__panel" data-tab="card">
+          <div style="background:linear-gradient(150deg,var(--neon-deep),#0a0c13);border:1px solid var(--neon-line);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;">
+            <div style="font-family:'Syne';font-weight:800;font-size:1.3rem;">ESMOKE</div>
+            <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-top:0.2rem;">Rewards Member</div>
+            <div style="margin-top:1.6rem;display:flex;align-items:flex-end;justify-content:space-between;">
+              <div><div style="font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);">Member</div><div style="font-family:'Syne';font-weight:700;font-size:1.1rem;">Adam Blackwell</div></div>
+              <div style="width:54px;height:54px;border-radius:10px;background:#fff;display:grid;place-items:center;">
+                <svg width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="#fff"/><g fill="#06070b"><rect x="4" y="4" width="10" height="10"/><rect x="26" y="4" width="10" height="10"/><rect x="4" y="26" width="10" height="10"/><rect x="18" y="4" width="4" height="4"/><rect x="18" y="12" width="4" height="6"/><rect x="26" y="18" width="4" height="4"/><rect x="32" y="22" width="4" height="6"/><rect x="18" y="26" width="6" height="4"/><rect x="26" y="30" width="10" height="6"/></g></svg>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:0.78rem;color:var(--text-mute);margin-top:0.9rem;text-align:center;">Scan at the register to earn &amp; redeem.</p>
+        </div>
+      </div>
     </div>
-    <div class="tiers">
-      <div class="tier reveal d1">
-        <div class="pts">100<small>Points</small></div>
-        <div class="arrow">↓</div>
-        <div class="reward">$10 off</div>
-        <div class="cond">on a purchase of $25 or more</div>
-      </div>
-      <div class="tier reveal d2">
-        <div class="pts">200<small>Points</small></div>
-        <div class="arrow">↓</div>
-        <div class="reward">$20 off</div>
-        <div class="cond">on a purchase of $50 or more</div>
-      </div>
-      <div class="tier reveal d3">
-        <div class="pts">300<small>Points</small></div>
-        <div class="arrow">↓</div>
-        <div class="reward">$30 off</div>
-        <div class="cond">on a purchase of $75 or more</div>
-      </div>
-    </div>
-    <p style="text-align:center;color:var(--text-dim);margin-top:2.4rem;font-size:0.92rem;">Ask any cashier to start earning — it's free to join.</p>
   </div>
 </section>
 
+<!-- ================= SHOP ONLINE TEASER ================= -->
+<section class="pad alt" id="shop">
+  <div class="wrap">
+    <div class="teaser reveal">
+      <div class="teaser-inner">
+        <div>
+          <span class="soon">Coming Soon</span>
+          <h2>Shop online.<br>Pick up in store.</h2>
+          <p>Browse the full catalog, check live in-stock by location, and reserve your gear for pickup. We're building it now — be first to know when it drops.</p>
+          <form class="notify" onsubmit="return notifySubmit(event)">
+            <input type="email" placeholder="you@email.com" aria-label="Email" required />
+            <button class="btn" type="submit">Notify Me</button>
+            <span class="ok">You're on the list — we'll text you when it's live. ✓</span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATIONS / LOCATOR ================= -->
 <section class="pad" id="locations">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Find Us</span>
       <h2 class="syne">Six stores, <span class="em">one NC</span></h2>
-      <p>Open early and late, seven days a week — and Graham never closes, with a drive-thru. Find your nearest store below.</p>
+      <p>Open early and late, seven days a week — and Graham never closes, with a drive-thru. Tap a store to see hours &amp; directions.</p>
     </div>
-    <div class="loc-grid">
-      <div class="loc reveal d1"><div class="city">Raleigh</div><address>8201 Rowlock Way, Ste 114<br />Raleigh, NC</address><div class="hours"><div class="row"><span class="d">Mon – Sat</span><span class="t">7am – 12am</span></div><div class="row"><span class="d">Sun</span><span class="t">9am – 11pm</span></div></div><a class="phone" href="tel:+19198035726">(919) 803-5726</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%208201%20Rowlock%20Way%20Ste%20114%20Raleigh%20NC">Directions →</a><a class="dir" target="_blank" rel="noopener" href="https://www.instagram.com/esmoke_raleigh/">Instagram ↗</a></div></div>
-      <div class="loc reveal d2"><div class="city">Graham</div><address>212 S Main St<br />Graham, NC</address><div class="loc-badges"><span class="open247">Open 24 hours · 7 days</span><span class="badge-alt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11M5 11h14v5H5zM5 16v2M19 16v2"/><circle cx="8" cy="13.5" r="1"/><circle cx="16" cy="13.5" r="1"/></svg>Drive-thru</span></div><a class="phone" href="tel:+13362704888">(336) 270-4888</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%20212%20S%20Main%20St%20Graham%20NC">Directions →</a><a class="dir" target="_blank" rel="noopener" href="https://www.instagram.com/esmoke_graham/">Instagram ↗</a></div></div>
-      <div class="loc reveal d3"><div class="city">Durham</div><address>3205 University Dr<br />Durham, NC</address><div class="hours"><div class="row"><span class="d">Mon – Thu</span><span class="t">8am – 11pm</span></div><div class="row"><span class="d">Fri – Sat</span><span class="t">8am – 12am</span></div><div class="row"><span class="d">Sun</span><span class="t">9am – 11pm</span></div></div><a class="phone" href="tel:+19848880189">(984) 888-0189</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%203205%20University%20Dr%20Durham%20NC">Directions →</a><a class="dir" target="_blank" rel="noopener" href="https://www.instagram.com/esmokedurham/">Instagram ↗</a></div></div>
-      <div class="loc reveal d1"><div class="city">Hendersonville</div><address>168 Highlands Square Dr<br />Hendersonville, NC</address><div class="hours"><div class="row"><span class="d">Mon – Thu</span><span class="t">7am – 11pm</span></div><div class="row"><span class="d">Fri – Sat</span><span class="t">7am – 12am</span></div><div class="row"><span class="d">Sun</span><span class="t">9am – 10pm</span></div></div><a class="phone" href="tel:+18285131000">(828) 513-1000</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%20168%20Highlands%20Square%20Dr%20Hendersonville%20NC">Directions →</a></div></div>
-      <div class="loc reveal d2"><div class="city">Southport</div><address>1671 N Howe St<br />Southport, NC</address><div class="hours"><div class="row"><span class="d">Every day</span><span class="t">9am – 11pm</span></div></div><a class="phone" href="tel:+19104779020">(910) 477-9020</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%201671%20N%20Howe%20St%20Southport%20NC">Directions →</a></div></div>
-      <div class="loc reveal d3"><div class="city">Winston-Salem</div><address>4842 Country Club Rd<br />Winston-Salem, NC</address><div class="hours"><div class="row"><span class="d">Mon – Thu</span><span class="t">7am – 11pm</span></div><div class="row"><span class="d">Fri – Sat</span><span class="t">7am – 12am</span></div><div class="row"><span class="d">Sun</span><span class="t">9am – 11pm</span></div></div><a class="phone" href="tel:+13362936167">(336) 293-6167</a><div class="loc-links"><a class="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=ESMOKE%204842%20Country%20Club%20Rd%20Winston-Salem%20NC">Directions →</a><a class="dir" target="_blank" rel="noopener" href="https://www.instagram.com/esmoke_winston/">Instagram ↗</a></div></div>
+    <div class="locator reveal d1">
+      <div class="loc-list">
+        <button class="loc-item active" data-store="raleigh"><div><div class="ci">Raleigh</div><div class="meta">8201 Rowlock Way · Mon–Sat 7a–12a</div></div><span class="open">7a–12a</span></button>
+        <button class="loc-item" data-store="graham"><div><div class="ci">Graham</div><div class="meta">212 S Main St · Drive-thru</div></div><span class="badge247">24 / 7</span></button>
+        <button class="loc-item" data-store="durham"><div><div class="ci">Durham</div><div class="meta">3205 University Dr · Mon–Thu 8a–11p</div></div><span class="open">8a–11p</span></button>
+        <button class="loc-item" data-store="hendersonville"><div><div class="ci">Hendersonville</div><div class="meta">168 Highlands Square Dr</div></div><span class="open">7a–11p</span></button>
+        <button class="loc-item" data-store="southport"><div><div class="ci">Southport</div><div class="meta">1671 N Howe St · Every day</div></div><span class="open">9a–11p</span></button>
+        <button class="loc-item" data-store="winston"><div><div class="ci">Winston-Salem</div><div class="meta">4842 Country Club Rd</div></div><span class="open">7a–11p</span></button>
+      </div>
+      <div class="loc-detail" id="locDetail"></div>
     </div>
   </div>
 </section>
 
-<section class="pad band">
+<!-- ================= CTA BAND ================= -->
+<section class="band">
   <div class="wrap">
-    <h2 class="syne reveal">Come see what's <span class="em glow-text">new</span>.</h2>
-    <p class="reveal d1">New drops weekly. Stop by your nearest E-Smoke and ask the crew what just landed.</p>
-    <a href="#locations" class="btn reveal d2">Find Your Store</a>
+    <div class="band-inner">
+      <h2 class="syne reveal">Come see what's <span class="em glow-text">new</span>.</h2>
+      <p class="reveal d1">New drops weekly. Stop by your nearest E-Smoke and ask the crew what just landed.</p>
+      <a href="#locations" class="btn btn--lg reveal d2">Find Your Store</a>
+    </div>
   </div>
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <div class="foot-brand">ESMOKE</div>
-        <p style="color:var(--neon);margin-top:0.2rem;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;">Tobacco &amp; Vape · Est. 2014</p>
-        <p style="color:var(--text-dim);margin-top:0.8rem;max-width:32ch;font-size:0.92rem;">Your one stop shop for all your smoking needs. Six locations across North Carolina, since 2014.</p>
+        <div class="foot-brand"><span class="e">E</span>SMOKE</div>
+        <div class="foot-tag">Tobacco &amp; Vape · Est. 2014</div>
+        <p class="foot-desc">Your one stop shop for all your smoking needs. Six locations across North Carolina, since 2014.</p>
       </div>
-      <div class="foot-cols">
-        <div class="col"><h4>Shop</h4><a href="#products">Products</a><a href="#why">Why E-Smoke</a><a href="#locations">Locations</a></div>
-        <div class="col"><h4>Stores</h4><a href="#locations">Raleigh</a><a href="#locations">Durham</a><a href="#locations">Winston-Salem</a><a href="#locations">+ 3 more</a></div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="#products">Products</a>
+        <a href="#rewards">Rewards</a>
+        <a href="#shop">Shop Online</a>
+        <a href="#locations">Locations</a>
+      </div>
+      <div class="foot-col">
+        <h4>Stores</h4>
+        <a href="#locations">Raleigh</a>
+        <a href="#locations">Durham</a>
+        <a href="#locations">Winston-Salem</a>
+        <a href="#locations">+ 3 more</a>
+      </div>
+      <div class="foot-qr">
+        <img src="assets/esmoke-qr.png" alt="Scan to open on your phone" />
+        <p>Scan to view<br>on your phone</p>
       </div>
     </div>
     <div class="warning">
@@ -377,20 +296,11 @@
     </div>
     <div class="foot-bottom">
       <span>© ESMOKE Tobacco &amp; Vape · North Carolina</span>
-      <span class="demo-tag">Demo site — designed &amp; built by Adam Blackwell. Sample for review.</span>
+      <span>Demo site — designed for review.</span>
     </div>
   </div>
 </footer>
 
-<script>
-  const header = document.getElementById('header');
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
-</script>
+<script src="assets/site.js?v=4"></script>
 </body>
 </html>
