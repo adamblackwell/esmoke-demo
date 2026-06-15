@@ -164,6 +164,17 @@
   .loc a.dir:hover { text-shadow: 0 0 12px var(--neon-soft); }
 
   /* ---------- cta band ---------- */
+  /* ---------- rewards ---------- */
+  .rewards { background: var(--bg-2); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .tier { background: linear-gradient(160deg, var(--surface), var(--bg-2)); border: 1px solid var(--line-2); border-radius: 16px; padding: 2.6rem 1.6rem; text-align: center; transition: all 0.3s ease; }
+  .tier:hover { border-color: var(--neon); transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,0.5), 0 0 24px rgba(63,139,208,0.14); }
+  .tier .pts { font-family: "Syne", sans-serif; font-weight: 800; font-size: 3.2rem; color: var(--neon); line-height: 1; text-shadow: 0 0 22px rgba(63,139,208,0.4); }
+  .tier .pts small { display: block; font-family: "Sora", sans-serif; font-weight: 500; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.5rem; }
+  .tier .arrow { color: var(--neon); font-size: 1.4rem; margin: 1.1rem 0 0.9rem; opacity: 0.55; }
+  .tier .reward { font-family: "Syne", sans-serif; font-weight: 800; font-size: 2rem; color: var(--text); }
+  .tier .cond { font-size: 0.92rem; color: var(--text-dim); margin-top: 0.4rem; }
+  @media (max-width: 680px) { .tiers { grid-template-columns: 1fr; } }
   .band { text-align: center; position: relative; }
   .band h2 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 1.2rem; }
   .band p { color: var(--text-dim); margin-bottom: 2rem; }
@@ -221,6 +232,7 @@
       <div class="nav-links">
         <a href="#products">Products</a>
         <a href="#why">Why E-Smoke</a>
+        <a href="#rewards">Rewards</a>
         <a href="#locations">Locations</a>
         <a href="#locations" class="btn">Find a Store</a>
       </div>
@@ -287,6 +299,37 @@
       <div class="feat reveal d2"><div class="n">100s</div><h3>Of products in stock</h3><p>Huge selection across every category, restocked constantly.</p></div>
       <div class="feat reveal d3"><div class="n">★</div><h3>Staff who know the gear</h3><p>Real answers, real recommendations — not a guess from behind the counter.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="pad rewards" id="rewards">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Rewards</span>
+      <h2 class="syne">ESMOKE Rewards</h2>
+      <p>Earn points every time you shop — at any of our six stores. Stack them up and cash them in for real money off.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier reveal d1">
+        <div class="pts">100<small>Points</small></div>
+        <div class="arrow">↓</div>
+        <div class="reward">$10 off</div>
+        <div class="cond">on a purchase of $25 or more</div>
+      </div>
+      <div class="tier reveal d2">
+        <div class="pts">200<small>Points</small></div>
+        <div class="arrow">↓</div>
+        <div class="reward">$20 off</div>
+        <div class="cond">on a purchase of $50 or more</div>
+      </div>
+      <div class="tier reveal d3">
+        <div class="pts">300<small>Points</small></div>
+        <div class="arrow">↓</div>
+        <div class="reward">$30 off</div>
+        <div class="cond">on a purchase of $75 or more</div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--text-dim);margin-top:2.4rem;font-size:0.92rem;">Ask any cashier to start earning — it's free to join.</p>
   </div>
 </section>
 
