@@ -198,6 +198,12 @@
         { label: "THC-A Disposables", items: [{n:"Puffy",top:true},"Torch","Big Chief","Dozo","Looper","Half Bakd","Flying Horse","Smakd","FVKD","Kayo","Hazy Mary","Wildwood","Geek Fuze","Habit Sauce","Munchies","Covert","Loud","Juicy Kush","Koi","Boutiq","Zooted","Meadow","Venera","Nice Cannabis","FLWR","Fusion Hippie","Polka Puff","Astria Farms","Frozen Fields","Budget","NYB","Zour"] }
       ]
     },
+    "7-OH": {
+      blurb: "Our biggest category — the full 7-hydroxy lineup, kept stocked across all six stores.",
+      groups: [
+        { label: "In Stock", items: ["Dopium","7Tabz","Kama","Opia","Zourz","Dozo","Pure Ohms","Press'd","Perks","Rise","Blend","Kream","Smurph's","Sevn Up","Limitless","FVKD","Hazy Tabz","7Sunami","High Gravity"] }
+      ]
+    },
     "Juice / Salt Nic": {
       blurb: "Freebase e-liquid and nic salts — every flavor lane and every nic level, stocked deep.",
       groups: [
