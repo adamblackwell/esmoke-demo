@@ -191,6 +191,13 @@
 
   /* ---------- product brand modals ---------- */
   var BRANDS = {
+    "Disposables": {
+      blurb: "Nicotine disposables and THC-A disposables — the freshest drops, restocked constantly.",
+      groups: [
+        { label: "Vape Disposables (Nicotine)", items: ["Raz","Lost Mary","Geek Bar","Off-Stamp","Foger","Breeze","Nexa","Beri","Viho","UT","Whatabar","Crown Bar","Kanger Tech","Hookalit","Suonon"] },
+        { label: "THC-A Disposables", items: [{n:"Puffy",top:true},"Torch","Big Chief","Dozo","Looper","Half Bakd","Flying Horse","Smakd","FVKD","Kayo","Hazy Mary","Wildwood","Geek Fuze","Habit Sauce","Munchies","Covert","Loud","Juicy Kush","Koi","Boutiq","Zooted","Meadow","Venera","Nice Cannabis","FLWR","Fusion Hippie","Polka Puff","Astria Farms","Grozen Fields","Budget","NYB","Zour"] }
+      ]
+    },
     "Juice / Salt Nic": {
       blurb: "Freebase e-liquid and nic salts — every flavor lane and every nic level, stocked deep.",
       groups: [
@@ -211,7 +218,10 @@
     bTitle.textContent = name;
     bBlurb.textContent = data.blurb || "";
     bBody.innerHTML = data.groups.map(function (g) {
-      var chips = g.items.map(function (it) { return "<span>" + it + "</span>"; }).join("");
+      var chips = g.items.map(function (it) {
+        if (it && typeof it === "object") return '<span class="top">★ ' + it.n + '</span>';
+        return "<span>" + it + "</span>";
+      }).join("");
       return '<div class="brand-group"><div class="bg-label">' + g.label + ' · ' + g.items.length + ' brands</div><div class="brand-chips">' + chips + '</div></div>';
     }).join("");
     bModal.classList.add("open");

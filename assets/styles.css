@@ -426,4 +426,5 @@ footer { background: var(--bg-2); border-top: 1px solid var(--line-2); padding: 
 .brand-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .brand-chips span { font-size: 0.86rem; color: var(--text); background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 0.45em 1em; transition: border-color .2s, color .2s; }
 .brand-chips span:hover { border-color: var(--neon-line); color: var(--neon); }
+.brand-chips span.top { background: var(--neon-ghost); border-color: var(--neon); color: var(--neon); font-weight: 600; }
 .modal__foot { margin-top: 1.8rem; font-size: 0.78rem; color: var(--text-mute); text-align: center; }
