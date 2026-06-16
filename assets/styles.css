@@ -401,3 +401,29 @@ footer { background: var(--bg-2); border-top: 1px solid var(--line-2); padding: 
   .grid { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
   .card { padding: 1.3rem 1rem; }
 }
+
+/* ---------------- brand modal ---------------- */
+.card.has-brands { cursor: pointer; }
+.card-more { display: inline-block; margin-top: 0.7rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em; color: var(--neon); }
+.card.has-brands:hover .card-more { text-shadow: 0 0 12px var(--neon-soft); }
+
+.modal { position: fixed; inset: 0; z-index: 2000; display: none; }
+.modal.open { display: block; }
+.modal__scrim { position: absolute; inset: 0; background: rgba(4,5,9,0.72); backdrop-filter: blur(8px); }
+.modal__panel {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  width: min(640px, 92vw); max-height: 86vh; overflow-y: auto;
+  background: linear-gradient(170deg, var(--surface-2), var(--bg-2));
+  border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 2.4rem;
+  box-shadow: var(--shadow), 0 0 50px rgba(78,162,236,0.16); animation: fade .3s var(--ease);
+}
+.modal__close { position: absolute; top: 1.1rem; right: 1.1rem; width: 38px; height: 38px; border-radius: 50%; background: none; border: 1px solid var(--line); color: var(--text); cursor: pointer; display: grid; place-items: center; transition: all .2s; }
+.modal__close:hover { border-color: var(--neon); color: var(--neon); }
+.modal__title { font-size: 1.9rem; margin-top: 0.5rem; }
+.modal__blurb { color: var(--text-dim); font-size: 0.95rem; margin-top: 0.6rem; }
+.modal__body { margin-top: 1.7rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.brand-group .bg-label { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 0.8rem; }
+.brand-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.brand-chips span { font-size: 0.86rem; color: var(--text); background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 0.45em 1em; transition: border-color .2s, color .2s; }
+.brand-chips span:hover { border-color: var(--neon-line); color: var(--neon); }
+.modal__foot { margin-top: 1.8rem; font-size: 0.78rem; color: var(--text-mute); text-align: center; }

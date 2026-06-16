@@ -189,6 +189,59 @@
   });
   selectStore("raleigh");
 
+  /* ---------- product brand modals ---------- */
+  var BRANDS = {
+    "Juice / Salt Nic": {
+      blurb: "Freebase e-liquid and nic salts — every flavor lane and every nic level, stocked deep.",
+      groups: [
+        { label: "E-Liquid (Freebase)", items: ["Naked 100","Jam Monster","Candy King","Coastal Clouds","Juice Head","Cloud Nurdz","Vapetasia","Twist","Sad Boy","Custard Monster","Lemonade Monster","Tobacco Monster","Juice Monster","BSX","The Milk","The Juice","MRKT PLCE"] },
+        { label: "Salt Nic", items: ["Pod Juice","Lost Mary","Raz","Pachamama","Mr. Freeze","Fume","Air Factory","The Finest","Bad Salt","Vapetasia","Cloud Nurdz","Sad Boy","Fruit Monster","Jam Monster","Juice Monster","Lemonade Monster","Juice Head","The Milk"] }
+      ]
+    }
+  };
+
+  var bModal = document.getElementById("brandModal");
+  var bTitle = document.getElementById("brandTitle");
+  var bBlurb = document.getElementById("brandBlurb");
+  var bBody = document.getElementById("brandBody");
+
+  function openBrands(name) {
+    var data = BRANDS[name];
+    if (!data || !bModal) return;
+    bTitle.textContent = name;
+    bBlurb.textContent = data.blurb || "";
+    bBody.innerHTML = data.groups.map(function (g) {
+      var chips = g.items.map(function (it) { return "<span>" + it + "</span>"; }).join("");
+      return '<div class="brand-group"><div class="bg-label">' + g.label + ' · ' + g.items.length + ' brands</div><div class="brand-chips">' + chips + '</div></div>';
+    }).join("");
+    bModal.classList.add("open");
+    document.body.classList.add("locked");
+  }
+  window.closeBrands = function () {
+    if (!bModal) return;
+    bModal.classList.remove("open");
+    if (gate.classList.contains("hidden")) document.body.classList.remove("locked");
+  };
+  if (bModal) {
+    bModal.querySelector(".modal__scrim").addEventListener("click", window.closeBrands);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") window.closeBrands(); });
+  }
+  document.querySelectorAll(".card").forEach(function (card) {
+    var h3 = card.querySelector("h3");
+    if (!h3) return;
+    var name = h3.textContent.trim();
+    if (BRANDS[name]) {
+      card.classList.add("has-brands");
+      if (!card.querySelector(".card-more")) {
+        var cue = document.createElement("span");
+        cue.className = "card-more";
+        cue.textContent = "View brands →";
+        card.appendChild(cue);
+      }
+      card.addEventListener("click", function () { openBrands(name); });
+    }
+  });
+
   /* ---------- reveal on scroll ---------- */
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
