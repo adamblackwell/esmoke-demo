@@ -204,6 +204,12 @@
         { label: "In Stock", items: ["Dopium","7Tabz","Kama","Opia","Zourz","Dozo","Pure Ohms","Press'd","Perks","Rise","Blend","Kream","Smurph's","Sevn Up","Limitless","FVKD","Hazy Tabz","7Sunami","High Gravity"] }
       ]
     },
+    "Kratom": {
+      blurb: "Trusted kratom brands — capsules, powders, extracts and shots.",
+      groups: [
+        { label: "In Stock", items: ["OPMS","Remarkable Herbs","Earth Kratom","Hush Kratom","Kratomade","K Shot"] }
+      ]
+    },
     "Juice / Salt Nic": {
       blurb: "Freebase e-liquid and nic salts — every flavor lane and every nic level, stocked deep.",
       groups: [
