@@ -8,15 +8,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/styles.css?v=7" />
+<link rel="stylesheet" href="assets/styles.css?v=8" />
 </head>
 <body>
 
 <!-- ================= AGE GATE ================= -->
 <div class="agegate" id="agegate">
   <div class="box">
-    <div class="mark"><span class="e">E</span>SMOKE</div>
-    <div class="sub">Tobacco &amp; Vape · Est. 2014</div>
+    <div class="agegate-logo">
+      <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ESMOKE Tobacco &amp; Vape, established 2014">
+        <defs>
+          <path id="cityRingAG" d="M 210,35 A 175,175 0 1,1 209.9,35" fill="none"/>
+          <style>
+            .ag-city{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;letter-spacing:2px;fill:#4ea2ec;}
+            .ag-wm{font-family:'Syne',sans-serif;font-weight:800;fill:#efe7d4;letter-spacing:-1px;}
+            .ag-tob{font-family:'Sora',sans-serif;font-weight:700;fill:#efe7d4;letter-spacing:8px;}
+            .ag-est{font-family:'Sora',sans-serif;font-weight:600;fill:#efe7d4;letter-spacing:3px;}
+          </style>
+        </defs>
+        <circle cx="210" cy="210" r="204" fill="none" stroke="#efe7d4" stroke-width="2"/>
+        <circle cx="210" cy="210" r="198" fill="none" stroke="#efe7d4" stroke-width="4"/>
+        <text class="ag-city"><textPath href="#cityRingAG" startOffset="2%" text-anchor="start">WINSTON-SALEM ✦✦✦ HENDERSONVILLE ✦ SOUTHPORT ✦✦✦ DURHAM ✦✦✦ GRAHAM ✦ RALEIGH ✦✦✦</textPath></text>
+        <text class="ag-est" x="210" y="132" text-anchor="middle" font-size="14">★ EST. 2014 ★</text>
+        <text class="ag-wm" x="206" y="226" text-anchor="end" font-size="52">ESM</text>
+        <text class="ag-wm" x="245" y="226" text-anchor="start" font-size="52">KE</text>
+        <circle cx="225" cy="207" r="18" fill="none" stroke="#efe7d4" stroke-width="11"/>
+        <path fill="#efe7d4" d="M225,197 C 230,202 232,205 232,209 A 7 7 0 0 1 218,209 C 218,205 222,203 223,199 C 224,203 226,202 225,197 Z"/>
+        <text class="ag-tob" x="216" y="266" text-anchor="middle" font-size="19">TOBACCO</text>
+      </svg>
+    </div>
     <h2>Are you 21 or older?</h2>
     <p class="q">You must be of legal age to enter. Products sold here are intended for adults 21+ only.</p>
     <div class="gate-btns">

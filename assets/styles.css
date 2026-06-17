@@ -111,6 +111,8 @@ body::before {
 .agegate .gate-btns .btn { flex: 1; }
 .agegate .deny { color: var(--text-dim); font-size: 0.85rem; margin-top: 1.3rem; display: none; }
 .agegate .legal { color: var(--text-mute); font-size: 0.72rem; margin-top: 1.6rem; letter-spacing: 0.02em; }
+.agegate-logo { display: flex; justify-content: center; margin-bottom: 1.7rem; }
+.agegate-logo svg { width: 172px; height: 172px; }
 
 /* ---------------- nav ---------------- */
 header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all .35s var(--ease); padding: 1.25rem 0; }

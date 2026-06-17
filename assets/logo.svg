@@ -1,0 +1,28 @@
+<svg width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="cityRing" d="M 210,35 A 175,175 0 1,1 209.9,35" fill="none"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Sora:wght@500;600;700&amp;display=swap');
+      .city{font-family:'Sora',sans-serif;font-weight:700;font-size:17px;letter-spacing:2px;fill:#4ea2ec;}
+      .wm{font-family:'Syne',sans-serif;font-weight:800;fill:#efe7d4;letter-spacing:-1px;}
+      .tob{font-family:'Sora',sans-serif;font-weight:700;fill:#efe7d4;letter-spacing:8px;}
+      .est{font-family:'Sora',sans-serif;font-weight:600;fill:#efe7d4;letter-spacing:3px;}
+    </style>
+  </defs>
+
+  <circle cx="210" cy="210" r="204" fill="none" stroke="#efe7d4" stroke-width="2"/>
+  <circle cx="210" cy="210" r="198" fill="none" stroke="#efe7d4" stroke-width="4"/>
+
+  <text class="city"><textPath href="#cityRing" startOffset="2%" text-anchor="start">
+    WINSTON-SALEM ✦✦✦ HENDERSONVILLE ✦ SOUTHPORT ✦✦✦ DURHAM ✦✦✦ GRAHAM ✦ RALEIGH ✦✦✦
+  </textPath></text>
+
+  <text class="est" x="210" y="132" text-anchor="middle" font-size="14">★ EST. 2014 ★</text>
+
+  <text class="wm" x="206" y="226" text-anchor="end" font-size="52">ESM</text>
+  <text class="wm" x="245" y="226" text-anchor="start" font-size="52">KE</text>
+  <circle cx="225" cy="207" r="18" fill="none" stroke="#efe7d4" stroke-width="11"/>
+  <path fill="#efe7d4" d="M225,197 C 230,202 232,205 232,209 A 7 7 0 0 1 218,209 C 218,205 222,203 223,199 C 224,203 226,202 225,197 Z"/>
+
+  <text class="tob" x="216" y="266" text-anchor="middle" font-size="19">TOBACCO</text>
+</svg>
