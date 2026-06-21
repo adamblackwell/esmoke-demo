@@ -19,10 +19,8 @@
 
   <text class="est" x="210" y="132" text-anchor="middle" font-size="14">★ EST. 2014 ★</text>
 
-  <text class="wm" x="206" y="226" text-anchor="end" font-size="52">ESM</text>
-  <text class="wm" x="245" y="226" text-anchor="start" font-size="52">KE</text>
-  <circle cx="225" cy="207" r="18" fill="none" stroke="#efe7d4" stroke-width="11"/>
-  <path fill="#efe7d4" d="M225,197 C 230,202 232,205 232,209 A 7 7 0 0 1 218,209 C 218,205 222,203 223,199 C 224,203 226,202 225,197 Z"/>
+  <text class="wm" x="210" y="226" text-anchor="middle" font-size="52">ESMOKE</text>
+  <g transform="translate(232.6,207.5)"><path fill="#efe7d4" d="M0,-5.5 C 3.2,-1.8 4.9,0.6 4.9,3.2 A 4.9 4.9 0 0 1 -4.9,3.2 C -4.9,0.6 -2.2,-1.1 -1.3,-4 C -0.5,-1.3 1.1,-1.9 0,-5.5 Z"/></g>
 
-  <text class="tob" x="216" y="266" text-anchor="middle" font-size="19">TOBACCO</text>
+  <text class="tob" x="213" y="266" text-anchor="middle" font-size="19">TOBACCO</text>
 </svg>
