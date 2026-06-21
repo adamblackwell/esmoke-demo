@@ -171,14 +171,16 @@
     if (s.drivethru) badges += '<span class="loc-item open" style="border:1px solid var(--neon-line);border-radius:999px;padding:.3em .8em;">Drive-thru</span>';
     var igLink = s.ig ? '<a class="btn btn--ghost" style="padding:.7em 1.2em;font-size:.8rem;" target="_blank" rel="noopener" href="' + s.ig + '">Instagram ↗</a>' : "";
     detailEl.innerHTML =
-      '<div class="loc-map"><span class="pin" style="left:' + s.x + '%;top:' + s.y + '%"></span><span class="maptag">interactive map — drop store pin</span></div>' +
       '<div class="loc-info">' +
         '<h3>' + s.city + '</h3>' +
         '<address>' + s.addr + '</address>' +
         (badges ? '<div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.1rem;">' + badges + '</div>' : '') +
         '<div class="hours">' + hoursRows + '</div>' +
+        '<a class="loc-phone" href="tel:' + s.tel + '">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>' +
+          '<span>' + s.phone + '</span>' +
+        '</a>' +
         '<div class="loc-actions">' +
-          '<a class="phone" href="tel:' + s.tel + '">' + s.phone + '</a>' +
           '<a class="btn" style="padding:.7em 1.2em;font-size:.8rem;" target="_blank" rel="noopener" href="' + s.maps + '">Directions →</a>' +
           igLink +
         '</div>' +

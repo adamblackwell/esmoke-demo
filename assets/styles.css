@@ -304,7 +304,7 @@ section.pad { padding: 8rem 0; }
 .notify.done .ok { display: block; }
 
 /* ---------------- locations / locator ---------------- */
-.locator { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 2rem; align-items: stretch; }
+.locator { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 2rem; align-items: start; }
 .loc-list { display: flex; flex-direction: column; gap: 0.7rem; max-height: 560px; overflow-y: auto; padding-right: 0.4rem; }
 .loc-list::-webkit-scrollbar { width: 6px; }
 .loc-list::-webkit-scrollbar-thumb { background: var(--line-3); border-radius: 999px; }
@@ -334,6 +334,9 @@ section.pad { padding: 8rem 0; }
 .loc-info .loc-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; align-items: center; }
 .loc-info .phone { font-weight: 500; font-size: 1.05rem; color: var(--text); }
 .loc-info .phone:hover { color: var(--neon); }
+.loc-info .loc-phone { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.2rem; padding: 0.9rem 1.3rem; border: 1px solid var(--neon-line); border-radius: var(--radius-sm); background: var(--neon-ghost); color: var(--neon); font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.5rem; letter-spacing: 0.01em; transition: background .2s, box-shadow .2s; }
+.loc-info .loc-phone:hover { background: rgba(78,162,236,0.16); box-shadow: 0 0 22px rgba(78,162,236,0.18); }
+.loc-info .loc-phone svg { width: 22px; height: 22px; flex-shrink: 0; }
 
 /* ---------------- cta band ---------------- */
 .band { text-align: center; position: relative; padding: 9rem 0; overflow: hidden; }
