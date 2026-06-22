@@ -266,6 +266,15 @@
     }
   });
 
+  /* ---------- rewards portal link (RewardUp) ---------- */
+  /* >>> Paste ESMOKE's RewardUp member-site link between the quotes below, then save. <<< */
+  var REWARDUP_URL = "";
+  if (REWARDUP_URL) {
+    document.querySelectorAll("[data-rewardup]").forEach(function (a) {
+      a.href = REWARDUP_URL; a.target = "_blank"; a.rel = "noopener";
+    });
+  }
+
   /* ---------- reveal on scroll ---------- */
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
